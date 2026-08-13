@@ -1,0 +1,13 @@
+num2words
+ofxparse
+openpyxl
+polib
+python-dateutil
+python-stdnum
+qrcode
+requests
+vobject
+xlrd
+XlsxWriter
+xlwt
+zeep
