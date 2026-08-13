@@ -1,5 +1,5 @@
 [options]
-addons_path = /mnt/extra-addons,/mnt/extra-addons/jdm,/mnt/extra-addons/vtex,/mnt/enterprise-addons
+addons_path = /mnt/extra-addons,/mnt/extra-addons/jdm,/mnt/extra-addons/vtex,/mnt/extra-addons/wombell/jdm,/mnt/extra-addons/wombell/vtex,/mnt/enterprise-addons
 
 admin_passwd = CHANGE_ME
 db_host = db
