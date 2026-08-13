@@ -32,6 +32,7 @@ services:
     volumes:
       - ./config:/etc/odoo
       - ./addons:/mnt/extra-addons
+      - ./enterprise:/mnt/enterprise-addons
       - odoo-web-data:/var/lib/odoo
 
   caddy:
