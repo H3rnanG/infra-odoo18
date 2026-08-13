@@ -1,5 +1,5 @@
 [options]
-addons_path = /mnt/enterprise-addons,/mnt/extra-addons,/mnt/extra-addons/jdm,/mnt/extra-addons/vtex
+addons_path = /mnt/enterprise-addons,/mnt/extra-addons,/mnt/extra-addons/wombell/jdm,/mnt/extra-addons/wombell/vtex,/mnt/extra-addons/jdm,/mnt/extra-addons/vtex
 
 admin_passwd = CHANGE_ME
 db_host = db
@@ -26,5 +26,5 @@ data_dir = /var/lib/odoo/data
 sessions_dir = /var/lib/odoo/sessions
 
 without_demo = all
-server_wide_modules = base,web,web_enterprise
+server_wide_modules = base,web
 list_db = True
