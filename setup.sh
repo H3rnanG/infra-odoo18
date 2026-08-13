@@ -8,7 +8,7 @@ echo -e "${GREEN}Starting Odoo 18 project configuration...${NC}"
 
 # 1. Create folder structure if it doesn't exist
 echo "Creating directories..."
-mkdir -p addons config postgresql odoo-web-data
+mkdir -p addons config postgresql odoo-web-data caddy_data caddy_config
 
 # Generate random secure passwords for Odoo and Postgres
 DB_PASSWORD=$(openssl rand -hex 16)
@@ -24,7 +24,7 @@ if [ ! -f .env ]; then
     sed -i "s/ODOO_DB_PASSWORD=change_this_password/ODOO_DB_PASSWORD=${DB_PASSWORD}/g" .env
     sed -i "s/ODOO_ADMIN_PASSWORD=change_this_admin_password/ODOO_ADMIN_PASSWORD=${ADMIN_PASSWORD}/g" .env
     
-    echo -e "${GREEN}.env file created with secure generated passwords!${NC}"
+    echo -e "${GREEN}.env file created! Recuerda editar DOMAIN_NAME en .env con tu dominio o IP.${NC}"
 else
     echo ".env file already exists."
 fi
@@ -47,7 +47,7 @@ fi
 # 4. Adjust permissions (critical for Docker on Linux/AWS)
 echo "Adjusting data folder permissions..."
 chmod +x setup.sh entrypoint.sh 2>/dev/null || true
-chmod -R 777 postgresql odoo-web-data
+chmod -R 777 postgresql odoo-web-data caddy_data caddy_config
 
 echo -e "${GREEN}Configuration completed!${NC}"
 echo "You can now start the project with: docker compose up -d"

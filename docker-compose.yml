@@ -34,5 +34,24 @@ services:
       - ./addons:/mnt/extra-addons
       - odoo-web-data:/var/lib/odoo
 
+  caddy:
+    image: caddy:2.8-alpine
+    container_name: odoo18_caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      - DOMAIN_NAME=${DOMAIN_NAME:-localhost}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - odoo
+
 volumes:
   odoo-web-data:
+  caddy_data:
+  caddy_config:

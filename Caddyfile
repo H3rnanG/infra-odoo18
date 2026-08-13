@@ -1,0 +1,17 @@
+# Caddyfile configuration for Odoo 18
+# DOMAIN_NAME can be a domain like 'erp.tudominio.com' or 'http://localhost'
+
+{$DOMAIN_NAME:localhost} {
+    # Enable Gzip and Zstandard compression
+    encode gzip zstd
+
+    # WebSocket route for Odoo (Chat, live notifications)
+    @websocket {
+        header Connection *Upgrade*
+        header Upgrade    websocket
+    }
+    reverse_proxy @websocket odoo:8072
+
+    # Proxy for Odoo standard web traffic
+    reverse_proxy odoo:8069
+}
