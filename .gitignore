@@ -1,0 +1,5 @@
+postgresql/
+odoo-web-data/
+*.log
+.env
+config/odoo.conf

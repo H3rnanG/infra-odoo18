@@ -1,0 +1,30 @@
+[options]
+addons_path = /mnt/extra-addons
+
+admin_passwd = CHANGE_ME
+db_host = db
+db_port = 5432
+db_user = CHANGE_ME
+db_password = CHANGE_ME
+db_template = template1
+
+dbfilter = .*
+limit_time_cpu = 600
+limit_time_real = 1200
+limit_memory_soft = 2684354560
+limit_memory_hard = 4026531840
+limit_request = 8192
+
+workers = 0
+max_cron_threads = 2
+proxy_mode = True
+
+log_level = warn
+log_handler = :INFO
+
+data_dir = /var/lib/odoo/data
+sessions_dir = /var/lib/odoo/sessions
+
+without_demo = all
+server_wide_modules = base,web
+list_db = True
