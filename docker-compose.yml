@@ -2,7 +2,7 @@ name: odoo-18
 
 services:
   db:
-    image: postgres:17
+    image: postgres:18
     container_name: odoo18_db
     restart: unless-stopped
     shm_size: '512m'
